@@ -1,9 +1,14 @@
 const http = require('http');
+const url = require("url");
 
-// turn script into module (export parts of functionality that we want to provide to scripts)
-function start() {
+// distinguish requests based on URL path (paths for /start and /uploard URLs are handled by different parts of code)
+function start(route) {
   function onRequest(request, response) {
-    console.log("Request received.");
+    const pathname = url.parse(request.url).pathname;
+    console.log("Request for " + pathname + "received.");
+
+    route(pathname)
+
     response.writeHead(200, {"Content-Type": "text/plain"});
     response.write("Hello World");
     response.end();
