@@ -29,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/DannieSchu/node-book/issues"
   },
-  "homepage": "https://github.com/DannieSchu/node-book#readme"
+  "homepage": "https://github.com/DannieSchu/node-book#readme",
+  "dependencies": {
+    "formidable": "^1.2.2"
+  }
 }
